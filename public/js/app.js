@@ -1,6 +1,4 @@
 
-
-console.log('client side')
 const btn = document.getElementById('btn')
 const input = document.getElementById('input')
 const correct = document.getElementById('correct')
@@ -14,7 +12,7 @@ btn.addEventListener('click',(e) => {
     correct.textContent = 'loading ....'
     error.textContent =''
     
-    fetch(`http://localhost:5000/weather?address=${input.value}`)
+    fetch(`/weather?address=${input.value}`)
     .then((response)=>{
         response.json()
         .then((data)=>{

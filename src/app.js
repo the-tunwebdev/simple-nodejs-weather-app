@@ -4,6 +4,7 @@ const app = express()
 const hbs =  require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
+const port = process.env.PORT || 5000
 const public_dir =  path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../src/templates/views')
 const partialPath = path.join(__dirname, '../src/templates/partials')
@@ -80,7 +81,7 @@ app.get('*',(req,res)=>{
     })
 
 })
-app.listen(5000,()=>{
+app.listen(port,()=>{
     console.log('server started on port 3000')
 
 })
